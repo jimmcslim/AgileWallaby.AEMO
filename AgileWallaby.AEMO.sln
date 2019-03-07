@@ -1,5 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{35E6569F-5E79-4B6B-B7C4-22DB2F797B3F}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AgileWallaby.AEMO.Tests", "AgileWallaby.AEMO.Tests\AgileWallaby.AEMO.Tests.fsproj", "{AFD22A2B-F4B1-4F1A-B2F4-641CF75DC398}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AgileWallaby.AEMO", "AgileWallaby.AEMO\AgileWallaby.AEMO.fsproj", "{F77B8286-93EC-4EEC-AF98-A0CF9CD8C34E}"

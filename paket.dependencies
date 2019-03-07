@@ -1,0 +1,6 @@
+source https://api.nuget.org/v3/index.json
+
+nuget FSharp.Core
+nuget FsUnit.xUnit 3.4.0
+nuget xunit 2.4.1
+nuget xunit.runner.visualstudio 2.4.1
