@@ -10,5 +10,8 @@
   <ItemGroup>
     <Compile Include="NMI.fs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="paket.references" />
+  </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

@@ -1,4 +1,4 @@
-namespace AgileWallaby.AEMO.Tests
+module AgileWallaby.AEMO.Tests.NMITests
 
 open System
 open AgileWallaby.AEMO
@@ -6,7 +6,7 @@ open AgileWallaby.AEMO
 open FsUnit
 open Xunit
 
-module NMITests =
+module Tests =
     
     [<Fact>]
     let ``Encapsulates a NMI`` () =
