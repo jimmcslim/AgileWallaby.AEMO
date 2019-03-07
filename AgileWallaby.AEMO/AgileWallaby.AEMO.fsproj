@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="FSharp\NMI.fs" />
+    <Compile Include="FSharp\NEM12.fs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NMI.fs" />
