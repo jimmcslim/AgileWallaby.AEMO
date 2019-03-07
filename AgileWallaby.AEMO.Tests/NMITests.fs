@@ -1,8 +1,9 @@
 namespace AgileWallaby.AEMO.Tests
 
 open System
-open FsUnit
 open AgileWallaby.AEMO
+
+open FsUnit
 open Xunit
 
 module NMITests =

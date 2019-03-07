@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileWallaby.AEMO", "AgileWallaby.AEMO\AgileWallaby.AEMO.csproj", "{2AF76C6B-5BD8-42AF-A57F-48758FB4BDCF}"
-EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AgileWallaby.AEMO.Tests", "AgileWallaby.AEMO.Tests\AgileWallaby.AEMO.Tests.fsproj", "{AFD22A2B-F4B1-4F1A-B2F4-641CF75DC398}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AgileWallaby.AEMO", "AgileWallaby.AEMO\AgileWallaby.AEMO.fsproj", "{F77B8286-93EC-4EEC-AF98-A0CF9CD8C34E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2AF76C6B-5BD8-42AF-A57F-48758FB4BDCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AF76C6B-5BD8-42AF-A57F-48758FB4BDCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AF76C6B-5BD8-42AF-A57F-48758FB4BDCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AF76C6B-5BD8-42AF-A57F-48758FB4BDCF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFD22A2B-F4B1-4F1A-B2F4-641CF75DC398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AFD22A2B-F4B1-4F1A-B2F4-641CF75DC398}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFD22A2B-F4B1-4F1A-B2F4-641CF75DC398}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFD22A2B-F4B1-4F1A-B2F4-641CF75DC398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F77B8286-93EC-4EEC-AF98-A0CF9CD8C34E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F77B8286-93EC-4EEC-AF98-A0CF9CD8C34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F77B8286-93EC-4EEC-AF98-A0CF9CD8C34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F77B8286-93EC-4EEC-AF98-A0CF9CD8C34E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
