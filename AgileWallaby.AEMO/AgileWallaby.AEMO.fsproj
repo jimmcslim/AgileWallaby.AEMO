@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FSharp\Utilities.fs" />
     <Compile Include="FSharp\NMI.fs" />
     <Compile Include="FSharp\NEM12.fs" />
   </ItemGroup>

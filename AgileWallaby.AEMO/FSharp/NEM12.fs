@@ -5,6 +5,7 @@ open System.Globalization
 open System.IO
 open CsvHelper
 open CsvHelper.Configuration
+open Utilities
 
 type HeaderRecord =
     {
@@ -84,21 +85,16 @@ let parseDateTime dateAsStr =
     | true, d -> d
     | _ -> failwith "Could not parse"
     
-let isNullOrWhiteSpace str =
-    match String.IsNullOrWhiteSpace str with
-    | true -> None
-    | false -> Some str
-    
 let parseDate dateAsStr =
     DateTime.ParseExact(dateAsStr, "yyyyMMdd", null)    
     
 let parseSomeDate dateAsStr =
-    match isNullOrWhiteSpace dateAsStr with
+    match trimmedOrNone dateAsStr with
     | None -> None
     | Some dateAsStr -> Some (parseDate dateAsStr)
     
 let parseSomeDateTime dateTimeAsStr =
-    match isNullOrWhiteSpace dateTimeAsStr with
+    match trimmedOrNone dateTimeAsStr with
     | None -> None
     | Some dateTimeAsStr -> Some (parseDateTime dateTimeAsStr)
     
@@ -155,7 +151,7 @@ let parseIntervalDataRecord (row:IReaderRow, context:NEM12Context) =
         IntervalValues = getIntervalValues
         QualityMethod = row.[afterValuesColumnIndex + 0]
         ReasonCode =
-            match isNullOrWhiteSpace row.[afterValuesColumnIndex + 1] with
+            match trimmedOrNone row.[afterValuesColumnIndex + 1] with
             | Some str -> Some (Int32.Parse(str))
             | _ -> None
         ReasonDescription = row.[afterValuesColumnIndex + 2]
@@ -196,9 +192,7 @@ let parseNem12File (tr:TextReader) =
         
     let parser = new CsvParser(tr, configuration)
     let reader = new CsvReader(parser)
-    //reader
-    
-    //let csvFile = CsvFile.Load (tr, ?hasHeaders = Some false)
+
     seq {
         let mutable context = {
             IntervalLength = TimeSpan.FromMinutes 30.

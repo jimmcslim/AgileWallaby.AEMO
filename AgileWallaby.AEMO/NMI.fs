@@ -3,18 +3,20 @@ namespace AgileWallaby.AEMO
 open System
 
 open AgileWallaby.AEMO.FSharp.NMI
+open AgileWallaby.AEMO.FSharp.Utilities
 
 [<AllowNullLiteral>]
 type NMI(nmi: string) =
     
     let nmi =
-        if String.IsNullOrWhiteSpace nmi then
-            raise(ArgumentOutOfRangeException("nmi", "NMI is null."))
         
-        if nmi.ToUpper().IndexOfAny([|'I'; 'O'|]) >= 0 then
-            raise(ArgumentOutOfRangeException("nmi", "NMI cannot contain I or O, ambiguous with 1 and 0."))
-        
-        nmi.ToUpper()
+        match trimmedOrNone nmi with
+        | None -> raise(ArgumentOutOfRangeException("nmi", "NMI is null."))
+        | Some nmi ->
+            if nmi.ToUpper().IndexOfAny([|'I'; 'O'|]) >= 0 then
+                raise(ArgumentOutOfRangeException("nmi", "NMI cannot contain I or O, ambiguous with 1 and 0."))
+
+            nmi.ToUpper()
     
     let checksum =
         match nmi.Length with
