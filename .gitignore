@@ -330,3 +330,5 @@ ASALocalRun/
 .mfractor/
 
 \.paket/\.store/
+
+\.DS_Store
