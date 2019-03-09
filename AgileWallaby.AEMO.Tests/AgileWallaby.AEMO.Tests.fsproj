@@ -16,286 +16,288 @@
     <Content Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="test-data\NEM12#000000000000001#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000001#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000002#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000002#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000003#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000003#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000004#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000004#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000005#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000005#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000006#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000006#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000007#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000007#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000008#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000008#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000009#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000009#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#000000000000010#CNRGYMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#000000000000010#CNRGYMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#01010_05030502#WBAYM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#01010_05030502#WBAYM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#02030_05030501#WBAYM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#02030_05030501#WBAYM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#03050_05031001#WBAYM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#03050_05031001#WBAYM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05050200001000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05050200001000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05050200002000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05050200002000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05050200003000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05050200003000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05050200004000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05050200004000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05050200005000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05050200005000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05050200008000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05050200008000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05051100001000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05051100001000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05051100002000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05051100002000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05051100004000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05051100004000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05051200001000000#GLOBALM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#05051200001000000#GLOBALM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05062000001000000#GLOBALM#EASTENGY">
+    <Content Include="valid-test-data\NEM12#05062000001000000#GLOBALM#EASTENGY">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#05090_05031401#WBAYM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#05090_05031401#WBAYM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#06110_05021206#WBAYM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#06110_05021206#WBAYM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#07130_05021202#WBAYM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#07130_05021202#WBAYM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#08150_05031502#WBAYM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#08150_05031502#WBAYM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#10190_05031401#WBAYM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#10190_05031401#WBAYM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#mdffl0000000001#ACTEWM#NEMMCO.mdff">
+    <Content Include="valid-test-data\NEM12#mdffl0000000001#ACTEWM#NEMMCO.mdff">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#mdffl0000000004#ACTEWM#NEMMCO.txt">
+    <Content Include="valid-test-data\NEM12#mdffl0000000004#ACTEWM#NEMMCO.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#mdffl0000000008#ACTEWM#NEMMCO.txt">
+    <Content Include="valid-test-data\NEM12#mdffl0000000008#ACTEWM#NEMMCO.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S01#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S01#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S02#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S02#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S03#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S03#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S04#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S04#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S05#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S05#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S06#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S06#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S07#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S07#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S08#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S08#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S09#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S09#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#S10#INTEGM#NEMMCO">
+    <Content Include="valid-test-data\nem12#S10#INTEGM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario01#ETSAMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario01#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario01#POWERMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario01#POWERMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO01#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO01#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO01NEM1201003#ELECTDSM#NEMMCO">
+    <Content Include="valid-test-data\nem12#SCENARIO01NEM1201003#ELECTDSM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO02#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO02#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO02NEM1202023#ELECTDSM#NEMMCO">
+    <Content Include="valid-test-data\nem12#SCENARIO02NEM1202023#ELECTDSM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO03#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO03#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO03NEM1203043#ELECTDSM#NEMMCO">
+    <Content Include="valid-test-data\nem12#SCENARIO03NEM1203043#ELECTDSM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario04#ETSAMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario04#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario04#POWERMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario04#POWERMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO04#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO04#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario05#ETSAMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario05#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario05#POWERMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario05#POWERMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO05#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO05#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO05NEM1205083#ELECTDSM#NEMMCO">
+    <Content Include="valid-test-data\nem12#SCENARIO05NEM1205083#ELECTDSM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario06#ETSAMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario06#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario06#POWERMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario06#POWERMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO06#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO06#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO06NEM1206103#ELECTDSM#NEMMCO">
+    <Content Include="valid-test-data\nem12#SCENARIO06NEM1206103#ELECTDSM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario07#ETSAMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario07#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario07#POWERMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario07#POWERMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO07#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO07#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO07NEM1206103#ELECTDSM#NEMMCO">
+    <Content Include="valid-test-data\nem12#SCENARIO07NEM1206103#ELECTDSM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario08#ETSAMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario08#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario08#POWERMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario08#POWERMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO08#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO08#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO08NEM1208143#ELECTDSM#NEMMCO">
+    <Content Include="valid-test-data\nem12#SCENARIO08NEM1208143#ELECTDSM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario09#ETSAMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario09#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario09#POWERMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario09#POWERMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO09#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO09#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO1#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO1#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario10#ETSAMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#Scenario10#POWERMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#Scenario10#POWERMDP#NEMMCO.csv">
+    <Content Include="valid-test-data\nem12#SCENARIO10#TCAUSTM#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO10#TCAUSTM#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO10#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO10#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO1005032705#ENERGEXM#NEMMCO.V05">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO1005032705#ENERGEXM#NEMMCO.V05">
+    <Content Include="valid-test-data\NEM12#SCENARIO105032701#ENERGEXM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO105032701#ENERGEXM#NEMMCO.V01">
+    <Content Include="valid-test-data\nem12#SCENARIO10NEM1210183#ELECTDSM#NEMMCO">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\nem12#SCENARIO10NEM1210183#ELECTDSM#NEMMCO">
+    <Content Include="valid-test-data\NEM12#SCENARIO2#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO2#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO205032701#ENERGEXM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO205032701#ENERGEXM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#SCENARIO3#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO3#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO305032701#ENERGEXM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO305032701#ENERGEXM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#SCENARIO4#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO4#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO5#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO5#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO505033001#ENERGEXM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO505033001#ENERGEXM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#SCENARIO6#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO6#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO605033001#ENERGEXM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO605033001#ENERGEXM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#SCENARIO7#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO7#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO705033001#ENERGEXM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO705033001#ENERGEXM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#SCENARIO8#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO8#UNITEDDP#NEMMCO.csv">
+    <Content Include="valid-test-data\NEM12#SCENARIO805040401#ENERGEXM#NEMMCO.V01">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO805040401#ENERGEXM#NEMMCO.V01">
+    <Content Include="valid-test-data\NEM12#SCENARIO9#UNITEDDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="test-data\NEM12#SCENARIO9#UNITEDDP#NEMMCO.csv">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="invalid-test-data\NEM12#Scenario10#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

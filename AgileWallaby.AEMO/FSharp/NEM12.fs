@@ -57,12 +57,18 @@ type IntervalEventRecord =
         StartInterval: int
         EndInterval: int
         QualityMethod: string
-        ReasonCode: int
+        ReasonCode: int option
         ReasonDescription: string
     }
     
 [<Literal>]
 let IntervalEventRecordIndicator = "400"
+
+
+type B2BDetailsRecord =
+    {
+        RecordIndicator: int
+    }
 
 type EndOfDataRecord =
     {
@@ -77,6 +83,7 @@ type NEM12Record =
     | DataDetails of DataDetailsRecord
     | IntervalData of IntervalDataRecord
     | IntervalEvent of IntervalEventRecord
+    | B2BDetails of B2BDetailsRecord
     | EndOfData of EndOfDataRecord
 
 let parseDateTime dateAsStr =
@@ -97,6 +104,11 @@ let parseSomeDateTime dateTimeAsStr =
     match trimmedOrNone dateTimeAsStr with
     | None -> None
     | Some dateTimeAsStr -> Some (parseDateTime dateTimeAsStr)
+    
+let parseSomeInt intAsStr =
+    match trimmedOrNone intAsStr with
+    | None -> None
+    | Some intAsStr -> Some (Int32.Parse(intAsStr))
     
 let parseHeaderRecord (row:IReaderRow) =
     {
@@ -135,7 +147,7 @@ let parseIntervalDataRecord (row:IReaderRow, context:NEM12Context) =
     let expectedNumberOfColumns = numberOfIntervalsPerDay + 7
 
     if row.Context.Record.Length <> numberOfIntervalsPerDay + 7 then
-        failwithf "Expected %d columns but there were %d" expectedNumberOfColumns row.Context.ColumnCount
+        failwithf "Expected %d columns but there were %d" expectedNumberOfColumns row.Context.Record.Length
     
     let afterValuesColumnIndex = numberOfIntervalsPerDay + 2
     
@@ -150,10 +162,7 @@ let parseIntervalDataRecord (row:IReaderRow, context:NEM12Context) =
         IntervalDate = intervalDate
         IntervalValues = getIntervalValues
         QualityMethod = row.[afterValuesColumnIndex + 0]
-        ReasonCode =
-            match trimmedOrNone row.[afterValuesColumnIndex + 1] with
-            | Some str -> Some (Int32.Parse(str))
-            | _ -> None
+        ReasonCode = parseSomeInt row.[afterValuesColumnIndex + 1]
         ReasonDescription = row.[afterValuesColumnIndex + 2]
         UpdateDateTime = parseDateTime row.[afterValuesColumnIndex + 3]
         MSATSLoadDateTime = parseSomeDateTime row.[afterValuesColumnIndex + 4]
@@ -165,7 +174,7 @@ let parseIntervalEventRecord (row:IReaderRow) =
         StartInterval = Int32.Parse(row.[1])
         EndInterval = Int32.Parse(row.[2])
         QualityMethod = row.[3]
-        ReasonCode = Int32.Parse(row.[4])
+        ReasonCode = parseSomeInt row.[4]
         ReasonDescription = row.[5]
     }
     
@@ -182,9 +191,14 @@ let parseNem12File (tr:TextReader) =
         | "100" -> (Header (parseHeaderRecord row), context)
         | "200" ->
             let record = parseDataDetailsRecord row
+            let context =
+                { context with
+                    NEM12Context.IntervalLength = record.IntervalLength
+                }
             (DataDetails record, context)
         | "300" -> (IntervalData (parseIntervalDataRecord (row, context)), context)
         | "400" -> (IntervalEvent (parseIntervalEventRecord row), context)
+        | "500" -> (B2BDetails ({ RecordIndicator = 500 }), context)
         | "900" -> (EndOfData (parseEndOfDataRecord row), context)
         | _ -> failwithf "Unexpected record indicator: %s" recordIndicator
     
