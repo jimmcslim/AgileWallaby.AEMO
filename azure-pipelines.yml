@@ -13,6 +13,8 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- script: dotnet tool uninstall --tool-path .paket paket
+  displayName: 'Uninstall Paket'
 - script: dotnet tool install --tool-path .paket Paket
   displayName: 'Install Paket'
 - script: dotnet build --configuration $(buildConfiguration)
