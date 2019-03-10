@@ -5,6 +5,7 @@ open System.Globalization
 open System.IO
 open CsvHelper
 open CsvHelper.Configuration
+
 open Utilities
 
 type HeaderRecord =
@@ -33,6 +34,44 @@ type DataDetailsRecord =
         NextScheduledReadDate: DateTime option
     }
     
+type QualityFlag =
+    | Actual
+    | Estimated
+    | Final
+    | Null
+    | Substituted
+    | Variable
+
+let parseQualityFlag str =
+    match trimmedOrNone str with
+    | Some "A" -> Actual
+    | Some "E" -> Estimated
+    | Some "F" -> Final
+    | Some "N" -> Null
+    | Some "S" -> Substituted
+    | Some "V" -> Variable
+    | Some str -> failwithf "'%s' is not a valid Quality Flag" str
+    | None -> failwithf "No Quality Flag specified"
+    
+type QualityMethod =
+    {
+        QualityFlag: QualityFlag
+        QualityMethod: string option
+    }
+
+let parseQualityMethod str =
+    match trimmedOrNone str with
+    | Some str when str.Length = 1 -> {
+            QualityFlag = parseQualityFlag (str.Substring(0, 1))
+            QualityMethod = None
+        }
+    | Some str when str.Length = 3 -> {
+            QualityFlag = parseQualityFlag (str.Substring(0, 1))
+            QualityMethod = Some (str.Substring(1, 2))
+        }    
+    | Some str -> failwithf "'%s' is an invalid length quality method" str
+    | None -> failwith "No Quality Method specified"
+
 [<Literal>]
 let DataDetailsRecordIndicator = "200"
     
@@ -41,7 +80,7 @@ type IntervalDataRecord =
         RecordIndicator: int
         IntervalDate: DateTime
         IntervalValues: decimal list
-        QualityMethod: string
+        QualityMethod: QualityMethod
         ReasonCode: int option
         ReasonDescription: string
         UpdateDateTime: DateTime
@@ -56,7 +95,7 @@ type IntervalEventRecord =
         RecordIndicator: int
         StartInterval: int
         EndInterval: int
-        QualityMethod: string
+        QualityMethod: QualityMethod
         ReasonCode: int option
         ReasonDescription: string
     }
@@ -161,7 +200,7 @@ let parseIntervalDataRecord (row:IReaderRow, context:NEM12Context) =
         RecordIndicator = 300
         IntervalDate = intervalDate
         IntervalValues = getIntervalValues
-        QualityMethod = row.[afterValuesColumnIndex + 0]
+        QualityMethod = parseQualityMethod row.[afterValuesColumnIndex + 0]
         ReasonCode = parseSomeInt row.[afterValuesColumnIndex + 1]
         ReasonDescription = row.[afterValuesColumnIndex + 2]
         UpdateDateTime = parseDateTime row.[afterValuesColumnIndex + 3]
@@ -173,7 +212,7 @@ let parseIntervalEventRecord (row:IReaderRow) =
         RecordIndicator = 400
         StartInterval = Int32.Parse(row.[1])
         EndInterval = Int32.Parse(row.[2])
-        QualityMethod = row.[3]
+        QualityMethod = parseQualityMethod row.[3]
         ReasonCode = parseSomeInt row.[4]
         ReasonDescription = row.[5]
     }
