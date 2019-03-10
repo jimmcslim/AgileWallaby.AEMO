@@ -8,7 +8,9 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet tool install --tool-path .paket Paket #Install paket
+- script: |
+    dotnet tool install --tool-path .paket Paket
+    .paket/paket install
   displayName: 'Install Paket'
 - script: dotnet restore #Necessary to explicitly restore first
   displayName: 'dotnet restore'
