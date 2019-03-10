@@ -1,4 +1,4 @@
-open Xunit
+module AgileWallaby.AEMO.Tests.Main
 
 [<EntryPoint>]
 let main args =
