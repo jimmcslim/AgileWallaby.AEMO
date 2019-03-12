@@ -6,6 +6,7 @@ open System.IO
 open CsvHelper
 open CsvHelper.Configuration
 
+open AgileWallaby.AEMO.FSharp.NMI
 open Utilities
 
 type HeaderRecord =
@@ -192,7 +193,7 @@ let parseIntervalDataRecord (row:IReaderRow, context:NEM12Context) =
     
     let getIntervalValues =
         seq {
-            for i = 1 to numberOfIntervalsPerDay do
+            for i in 1 .. numberOfIntervalsPerDay do
                 yield row.GetField<decimal>(i + 1)
         } |> Seq.toList
 
