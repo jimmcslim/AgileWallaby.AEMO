@@ -19,17 +19,14 @@ let calculateChecksum(nmi:string) =
                 let state = (v + d % 10, d / 10)
                 Some (state, state)
             
-        let (v, _) =
-            Seq.unfold x (v1, d)
-            |> Seq.last
-        
-        (v, not (mult))
-  
-    let (v, _) = seq { nmi.Length .. -1 .. 1 }
-                 |> Seq.map (fun i -> (int)nmi.[i - 1])
-                 |> Seq.fold folderFunc (0, true)
-                 
-    (10 - v % 10) % 10   
+        Seq.unfold x (v1, d)
+        |> Seq.last
+        |> fun (v, _) -> (v, not (mult))
+
+    seq { nmi.Length .. -1 .. 1 }
+    |> Seq.map (fun i -> (int)nmi.[i - 1])
+    |> Seq.fold folderFunc (0, true)
+    |> fun (v, _) -> (10 - v % 10) % 10
     
 type T = NMI of string
 
