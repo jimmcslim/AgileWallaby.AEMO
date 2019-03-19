@@ -8,21 +8,28 @@ let calculateChecksum(nmi:string) =
    
     let state = (0, true)
    
-    // TODO: Not very functional - rewrite!
-    let folder state i =
-        let x = (int)nmi.[i - 1]
-        let mutable d =
+    let folderFunc state x =
+        let d = 
             match snd state with
             | true -> x * 2
             | _ -> x
-        let multiply = not (snd state)
-        let mutable v = fst state
-        while (d > 0) do
-            v <- v + d % 10
-            d <- d / 10
-        (v, multiply)
+        
+        let x (v, d) =
+            match d with
+            | d when d <= 0 -> None
+            | _ ->
+                let state = (v + d % 10, d / 10)
+                Some (state, state)
+            
+        let (v, _) =
+                Seq.unfold x (fst state, d)
+                |> Seq.last
+        
+        (v, not (snd state))   
   
-    let result = seq { nmi.Length .. -1 .. 1 } |> Seq.fold folder state
+    let result = seq { nmi.Length .. -1 .. 1 }
+                 |> Seq.map (fun i -> (int)nmi.[i - 1])
+                 |> Seq.fold folderFunc state
     (10 - fst result % 10) % 10   
     
 type T = NMI of string
