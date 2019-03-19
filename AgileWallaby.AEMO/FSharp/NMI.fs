@@ -6,11 +6,9 @@ open Utilities
 
 let calculateChecksum(nmi:string) =
    
-    let state = (0, true)
-   
-    let folderFunc state x =
+    let folderFunc (v1, mult) x =
         let d = 
-            match snd state with
+            match mult with
             | true -> x * 2
             | _ -> x
         
@@ -22,15 +20,16 @@ let calculateChecksum(nmi:string) =
                 Some (state, state)
             
         let (v, _) =
-                Seq.unfold x (fst state, d)
-                |> Seq.last
+            Seq.unfold x (v1, d)
+            |> Seq.last
         
-        (v, not (snd state))   
+        (v, not (mult))
   
-    let result = seq { nmi.Length .. -1 .. 1 }
+    let (v, _) = seq { nmi.Length .. -1 .. 1 }
                  |> Seq.map (fun i -> (int)nmi.[i - 1])
-                 |> Seq.fold folderFunc state
-    (10 - fst result % 10) % 10   
+                 |> Seq.fold folderFunc (0, true)
+                 
+    (10 - v % 10) % 10   
     
 type T = NMI of string
 
