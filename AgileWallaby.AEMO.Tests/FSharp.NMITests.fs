@@ -41,3 +41,44 @@ module Tests =
     [<InlineData("VKTS876510", 8)>]
     let ``Accepts 11 digit NMI with valid checksum`` exampleNmi exampleChecksum =
         NMI.calculateChecksum exampleNmi |> should equal exampleChecksum
+
+    type NMIOrError =
+        | NMI of NMI.T
+        | Error of string
+        
+    [<Fact>]
+    let ``Can receive NMI or error via continuation`` () =
+        
+        let success = (fun x -> NMI x)
+        let error = (fun x -> Error x)
+        
+        match NMI.createNMI success error "1234567890" with
+        | NMI nmi -> nmi |> NMI.baseValue |> should equal "1234567890"
+        | Error err -> failwith err
+        
+        match NMI.createNMI success error "12345" with
+        | NMI nmi -> failwith "Expected an error"
+        | Error err -> err |> should equal "NMI should be 10 or 11 characters in length."
+        
+    [<Fact>]
+    let ``Can receive NMI or None via createNMIOrNone`` () =
+        
+        match NMI.createNMIOrNone "1234567890" with
+        | Some nmi -> nmi |> NMI.baseValue |> should equal "1234567890"
+        | None _ -> failwith "Should not have received None"
+        
+        match NMI.createNMIOrNone "12345" with
+        | Some nmi -> failwith "Should not have received a NMI"
+        | None _ -> ignore //Expected
+        |> ignore
+        
+    [<Fact>]
+    let ``Create receive NMI or raise exception via createNMIOrError`` () =
+        
+        let nmi = NMI.createNMIOrError "1234567890"
+        nmi |> NMI.baseValue |> should equal "1234567890"
+        
+        shouldFail (fun () -> NMI.createNMIOrError "12345" |> ignore)
+        
+        // How to test the message?
+        //(fun () -> NMI.createNMIOrError "12345" |> ignore) |> should (throwWithMessage "Invalid number of characters") typeof<System.Exception>
