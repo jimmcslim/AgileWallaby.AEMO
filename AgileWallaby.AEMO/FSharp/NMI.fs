@@ -5,6 +5,9 @@ open AgileWallaby.AEMO.FSharp
 open Utilities
 
 let calculateChecksum(nmi:string) =
+    
+    if (nmi.Length <> 10 && nmi.Length <> 11) then
+        invalidArg "nmi" nmi
    
     let folderFunc (v1, mult) x =
         let d = 
@@ -64,6 +67,3 @@ let baseValue (NMI s) = s.Substring(0, 10)
 let fullValue (NMI s) =
         let baseNmi = s.Substring(0, 10)
         sprintf "%s%d" baseNmi (calculateChecksum baseNmi)
-
-let nmi = createNMIOrNone "1234567890"
-
