@@ -11,7 +11,7 @@ module Tests =
     [<Fact>]
     let ``Encapsulates a NMI`` () =
         let nmi = new NMI "1234567890"
-        nmi.Value |> should equal "1234567890"
+        nmi.Base |> should equal "1234567890"
         
     [<Fact>]
     let ``Rejects Null, Empty, Or Non Valid Length NMIs``() =

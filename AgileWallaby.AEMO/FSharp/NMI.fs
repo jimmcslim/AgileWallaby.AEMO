@@ -23,7 +23,7 @@ let calculateChecksum(nmi:string) =
         |> Seq.last
         |> fun (v, _) -> (v, not (mult))
 
-    seq { nmi.Length .. -1 .. 1 }
+    seq { 10 .. -1 .. 1 }
     |> Seq.map (fun i -> (int)nmi.[i - 1])
     |> Seq.fold folderFunc (0, true)
     |> fun (v, _) -> (10 - v % 10) % 10
@@ -60,8 +60,10 @@ let createNMIOrNone = createNMI successOption failure
 let createNMIOrError = createNMI successValue error
 
 let checksum (NMI s) = calculateChecksum s
-let baseValue (NMI s) = s
-let fullValue (NMI s) = s
+let baseValue (NMI s) = s.Substring(0, 10)
+let fullValue (NMI s) =
+        let baseNmi = s.Substring(0, 10)
+        sprintf "%s%d" baseNmi (calculateChecksum baseNmi)
 
 let nmi = createNMIOrNone "1234567890"
 
