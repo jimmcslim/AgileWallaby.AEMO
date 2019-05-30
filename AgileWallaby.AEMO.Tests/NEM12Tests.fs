@@ -4,7 +4,6 @@ open System.IO
 
 open AgileWallaby.AEMO.FSharp.NEM12
 
-open System.IO
 open FsUnit
 open Xunit
 open Xunit.Abstractions

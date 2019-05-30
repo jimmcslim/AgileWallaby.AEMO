@@ -1,8 +1,6 @@
 module AgileWallaby.AEMO.FSharp.NMI
 
 open System
-open AgileWallaby.AEMO.FSharp
-open Utilities
 
 let calculateChecksum(nmi:string) =
     
@@ -33,34 +31,46 @@ let calculateChecksum(nmi:string) =
     
 type T = NMI of string
 
-let createNMI success failure (s:string) =
-        match trimmedOrNone s with
-        | Some s ->
-            let s = s.ToUpper()
-            
-            if s.ToUpper().IndexOfAny([|'I'; 'O'|]) >= 0 then
-                failure "NMI cannot contain I or O, ambiguous with 1 and 0."
-            else
-                match s.Length with
-                | 10 -> success (NMI s)
-                | 11 ->
-                    let nmiWithoutChecksum = s.Substring(0, 10)
-                    let expectedChecksum = calculateChecksum nmiWithoutChecksum
-                    let actualChecksum = Int32.Parse(s.[10].ToString())
-                    if expectedChecksum <> actualChecksum then
-                        failure (sprintf "Checksum is incorrect, expected %d, was %d" expectedChecksum actualChecksum)
-                    else success (NMI s)
-                | _ -> failure "NMI should be 10 or 11 characters in length."
-        | None -> failure "NMI is blank or null."
+let isNotNullOrWhitespace (s:string) =
+    match String.IsNullOrWhiteSpace s with
+    | true -> Error "Cannot be null or whitespace."
+    | _ -> Ok s
+
+let hasValidCharacters (s:string) =
+    match s.ToUpper().IndexOfAny([|'I';'O'|]) with
+    | x when x >= 0 -> Error "NMI cannot contain I or O, ambiguous with 1 and 0."
+    | _ -> Ok s
     
-let successOption e = Some e
-let failure _ = None
+let hasValidLength (s:string) =
+    match s.Length with
+    | 10 -> Ok s
+    | 11 -> Ok s
+    | _ -> Error "NMI should be 10 or 11 characters in length."
+    
+let hasValidChecksum (s:string) =
+    match hasValidLength s with
+    | Ok _ ->
+        match s.Length with
+        | 11 ->
+            let expectedChecksum = calculateChecksum s
+            let actualChecksum = Int32.Parse(s.[10].ToString())
+            match expectedChecksum with
+            | x when x = actualChecksum -> Ok s
+            | _ -> Error (sprintf "Checksum is incorrect, expected %d, was %d." expectedChecksum actualChecksum)
+        | _ -> Ok s
+    | Error x -> Error x    
+    
+let validateNmi s =
+    s
+    |> Result.bind isNotNullOrWhitespace
+    |> Result.bind hasValidLength
+    |> Result.bind hasValidCharacters
+    |> Result.bind hasValidChecksum
 
-let successValue e = e
-let error e = failwith e
-
-let createNMIOrNone = createNMI successOption failure
-let createNMIOrError = createNMI successValue error
+let createNMI nmi =
+    match validateNmi (Ok nmi) with
+    | Ok x -> Ok (NMI x)
+    | Error s -> Error s
 
 let checksum (NMI s) = calculateChecksum s
 let baseValue (NMI s) = s.Substring(0, 10)

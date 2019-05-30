@@ -5,11 +5,16 @@ open System
 open AgileWallaby.AEMO.FSharp.NMI
 
 [<AllowNullLiteral>]
-type NMI(nmi: string) =
+type NMI(nmiStr: string) =
     
     let (nmi, checksum) =
-        (FSharp.NMI.createNMIOrError nmi,
-         FSharp.NMI.calculateChecksum nmi)
+        let nmi =
+            match (FSharp.NMI.createNMI nmiStr) with
+            | Error x -> failwith x
+            | Ok x -> x
+
+        (nmi,
+         FSharp.NMI.calculateChecksum nmiStr)
         
     member this.Checksum = checksum
     
