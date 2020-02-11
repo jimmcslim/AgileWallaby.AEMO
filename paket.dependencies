@@ -3,9 +3,18 @@ source https://api.nuget.org/v3/index.json
 nuget FSharp.Core
 nuget CsvHelper ~> 12.1
 
-nuget FsUnit.xUnit 3.4.0
-nuget xunit 2.4.1
-nuget xunit.runner.visualstudio 2.4.1
-
 github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fsi
 github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fs
+
+group Build
+    source https://api.nuget.org/v3/index.json
+    
+    nuget ILRepack   
+
+group Test
+
+    source https://api.nuget.org/v3/index.json
+    
+    nuget FsUnit.xUnit 3.4.0
+    nuget xunit 2.4.1
+    nuget xunit.runner.visualstudio 2.4.1      

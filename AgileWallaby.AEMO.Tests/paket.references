@@ -1,4 +1,6 @@
-FsUnit.xUnit
-xunit
-xunit.runner.visualstudio
 FSharp.Core
+
+group Test
+    FsUnit.xUnit
+    xunit
+    xunit.runner.visualstudio

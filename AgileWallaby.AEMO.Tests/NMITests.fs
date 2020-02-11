@@ -2,11 +2,15 @@ module AgileWallaby.AEMO.Tests.NMITests
 
 open System
 open AgileWallaby.AEMO
+open FSharp.Data.AEMO
+//open Samples.
 
 open FsUnit
 open Xunit
 
 module Tests =
+
+    type snowman = Samples.StringTypeProvider.StringTyped<value = "abc">
     
     [<Fact>]
     let ``Encapsulates a NMI`` () =
