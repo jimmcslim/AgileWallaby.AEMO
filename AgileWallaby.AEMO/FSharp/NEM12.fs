@@ -51,8 +51,8 @@ let parseQualityFlag str =
     | Some "N" -> Null
     | Some "S" -> Substituted
     | Some "V" -> Variable
-    | Some str -> failwithf "'%s' is not a valid Quality Flag" str
-    | None -> failwithf "No Quality Flag specified"
+    | Some str -> failwith (sprintf "'%s' is not a valid Quality Flag" str)
+    | None -> failwith "No Quality Flag specified"
     
 type QualityMethod =
     {
