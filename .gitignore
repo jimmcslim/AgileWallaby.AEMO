@@ -332,3 +332,5 @@ ASALocalRun/
 \.paket/\.store/
 
 \.DS_Store
+
+.paket/Paket.Restore.targets
