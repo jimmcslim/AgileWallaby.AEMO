@@ -6,3 +6,6 @@ nuget CsvHelper ~> 12.1
 nuget FsUnit.xUnit 3.4.0
 nuget xunit 2.4.1
 nuget xunit.runner.visualstudio 2.4.1
+
+github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fsi
+github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fs

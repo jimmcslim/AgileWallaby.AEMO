@@ -1,2 +1,5 @@
 FSharp.Core
 CsvHelper
+
+File:ProvidedTypes.fsi
+File:ProvidedTypes.fs

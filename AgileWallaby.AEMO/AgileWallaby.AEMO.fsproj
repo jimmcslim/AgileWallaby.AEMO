@@ -4,10 +4,19 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\paket-files\fsprojects\FSharp.TypeProviders.StarterPack\src\ProvidedTypes.fsi">
+      <Paket>True</Paket>
+      <Link>paket-files/ProvidedTypes.fsi</Link>
+    </Compile>
+    <Compile Include="..\paket-files\fsprojects\FSharp.TypeProviders.StarterPack\src\ProvidedTypes.fs">
+      <Paket>True</Paket>
+      <Link>paket-files/ProvidedTypes.fs</Link>
+    </Compile>
     <Compile Include="FSharp\Utilities.fs" />
     <Compile Include="FSharp\NMI.fsi" />
     <Compile Include="FSharp\NMI.fs" />
     <Compile Include="FSharp\NEM12.fs" />
+    <Compile Include="FSharp\TypeProvider.fs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NMI.fs" />
