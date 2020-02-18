@@ -9,7 +9,7 @@ github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fs
 group Build
     source https://api.nuget.org/v3/index.json
     
-    nuget ILRepack   
+    nuget ILRepack.MSBuild.Task
 
 group Test
 

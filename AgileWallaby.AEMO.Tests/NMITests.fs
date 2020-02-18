@@ -14,15 +14,15 @@ module Tests =
     
     [<Fact>]
     let ``Encapsulates a NMI`` () =
-        let nmi = new NMI "1234567890"
+        let nmi = NMI "1234567890"
         nmi.Base |> should equal "1234567890"
         
     [<Fact>]
     let ``Rejects Null, Empty, Or Non Valid Length NMIs``() =
-        shouldFail (fun () -> new NMI(null) |> ignore)
-        shouldFail (fun () -> new NMI(String.Empty) |> ignore)
-        shouldFail (fun () -> new NMI("123456789") |> ignore)
-        shouldFail (fun () -> new NMI("123456789012") |> ignore)
+        shouldFail (fun () -> NMI(null) |> ignore)
+        shouldFail (fun () -> NMI(String.Empty) |> ignore)
+        shouldFail (fun () -> NMI("123456789") |> ignore)
+        shouldFail (fun () -> NMI("123456789012") |> ignore)
     
     [<Theory>]
     // Sample NMIs from https://bit.ly/2GKxM9E
@@ -57,7 +57,7 @@ module Tests =
     [<InlineData("NGGG000055", 4)>]
     [<InlineData("VKTS876510", 8)>]
     let ``Accepts 11 digit NMI with valid checksum`` exampleNmi exampleChecksum =
-        let nmi = new NMI(exampleNmi)
+        let nmi = NMI(exampleNmi)
         nmi.Checksum |> should equal exampleChecksum
         
     [<Theory>]
@@ -66,7 +66,7 @@ module Tests =
     [<InlineData("NM11234567O")>]
     [<InlineData("NM11234567I")>]
     let ``Rejects NMI with I or O as these are ambiguous characters`` nmiWithInvalidCharacter =
-        shouldFail (fun() -> new NMI(nmiWithInvalidCharacter) |> ignore)
+        shouldFail (fun() -> NMI(nmiWithInvalidCharacter) |> ignore)
 
     [<Theory>]
     [<InlineData("12345678900")>]
@@ -80,17 +80,17 @@ module Tests =
     [<InlineData("12345678908")>]
     [<InlineData("12345678909")>]
     let ``Rejects 11 digit NMI with invalid checksum`` nmiWithInvalidChecksum =
-        shouldFail (fun() -> new NMI(nmiWithInvalidChecksum) |> ignore)
+        shouldFail (fun() -> NMI(nmiWithInvalidChecksum) |> ignore)
 
     [<Fact>]
     let ``Can provide NMI inclusive or exclusive of checksum`` () =
-        let nmiWithoutChecksum = new NMI "2001985732" //Checksum is 8
+        let nmiWithoutChecksum = NMI "2001985732" //Checksum is 8
         nmiWithoutChecksum.Checksum |> should equal 8
         
         nmiWithoutChecksum.Base |> should equal "2001985732"
         nmiWithoutChecksum.Full |> should equal "20019857328"
         
-        let nmiWithChecksum = new NMI "20019857328"
+        let nmiWithChecksum = NMI "20019857328"
         nmiWithChecksum.Base |> should equal "2001985732"
         nmiWithChecksum.Full |> should equal "20019857328"
 
@@ -104,8 +104,8 @@ module Tests =
     [<InlineData("QAAAVZZZZZ", null, false)>]
     [<InlineData(null, null, true)>]
     let ``Implements equality`` lhs rhs areEqual =
-        let lhsNmi = if isNull lhs then null else new NMI(lhs)
-        let rhsNmi = if isNull rhs then null else new NMI(rhs)
+        let lhsNmi = if isNull lhs then null else NMI(lhs)
+        let rhsNmi = if isNull rhs then null else NMI(rhs)
         
         Object.Equals (lhsNmi, rhsNmi) |> should equal areEqual
         

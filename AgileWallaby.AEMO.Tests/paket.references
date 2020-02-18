@@ -1,4 +1,5 @@
 FSharp.Core
+CsvHelper 
 
 group Test
     FsUnit.xUnit

@@ -1,5 +1,8 @@
 FSharp.Core
-CsvHelper
+CsvHelper copy_local: true
 
 File:ProvidedTypes.fsi
 File:ProvidedTypes.fs
+
+group Build
+    ILRepack.MSBuild.Task

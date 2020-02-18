@@ -1,0 +1,9 @@
+type project
+
+excludeddependencies
+  CsvHelper
+  FSharp.Core
+  
+excludedgroups
+  Build
+
