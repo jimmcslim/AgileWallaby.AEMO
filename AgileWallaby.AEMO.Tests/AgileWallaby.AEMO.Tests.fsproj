@@ -300,6 +300,13 @@
     <Content Include="invalid-test-data\NEM12#Scenario10#ETSAMDP#NEMMCO.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Compile Include="CSVTests.fs" />
+    <Content Include="aemo-csv\PUBLIC_DISPATCHIS_202002180915_0000000319228251.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="aemo-csv\PUBLIC_DISPATCHIS_202001131410_0000000317693747.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

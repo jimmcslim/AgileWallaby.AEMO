@@ -1,8 +1,9 @@
 type project
+authors James Webster
+description Classes for working with AEMO file types
 
 excludeddependencies
   CsvHelper
-  FSharp.Core
   
 excludedgroups
   Build

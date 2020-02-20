@@ -18,6 +18,7 @@
     <Compile Include="FSharp\NMI.fs" />
     <Compile Include="FSharp\NEM12.fs" />
     <Compile Include="FSharp\TypeProvider.fs" />
+    <Compile Include="FSharp\CSV.fs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NMI.fs" />
@@ -32,7 +33,6 @@
     </PropertyGroup>
     <ItemGroup>
       <InputAssemblies Include="CsvHelper.dll" />
-      <InputAssemblies Include="FSharp.Core.dll" />
     </ItemGroup>
     <ItemGroup>
       <!-- Dot not internalize any types inside this assembly -->
