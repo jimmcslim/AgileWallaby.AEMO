@@ -16,6 +16,7 @@ type Tests(output: ITestOutputHelper) =
         let data = parseCSVFile reader
         
         for key in data.Reports do
-            output.WriteLine(sprintf "Report: %O Count: %d" key.Key key.Value.Data.Length)
+            let v = key.Value
+            output.WriteLine(sprintf "Report: %O Count: %d" key.Key v.Data.Length)
         
         true

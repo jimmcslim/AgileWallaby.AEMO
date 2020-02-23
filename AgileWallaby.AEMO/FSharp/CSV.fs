@@ -42,7 +42,7 @@ type ReportHeader = {
     }
 
 [<CLIMutable>]
-type ReportData = {
+type DataRecord = {
     recordIdentifier: char
     reportType: string
     reportSubtype: string
@@ -58,7 +58,7 @@ type ReportData = {
 type CsvRecord = 
     | Comment of Header
     | Information of ReportHeader
-    | Data of ReportData
+    | Data of DataRecord
     | EndOfReport of Footer
     
 type HeaderRecordMap() =
@@ -83,7 +83,7 @@ let getFields (row:IReaderRow) =
     seq { 4 .. row.Context.Record.Length - 1 }
     |> Seq.map (fun i -> row.GetField(i))
     |> Seq.toList
-
+    
 type InformationRecordMap() =
     inherit ClassMap<ReportHeader>()
     do
@@ -92,9 +92,9 @@ type InformationRecordMap() =
         base.Map(fun x -> x.reportSubtype).Index(2) |> ignore
         base.Map(fun x -> x.reportVersion).Index(3) |> ignore
         base.Map(fun x -> x.fields).ConvertUsing(getFields) |> ignore
-    
+
 type DataRecordMap() =
-    inherit ClassMap<ReportData>()
+    inherit ClassMap<DataRecord>()
     do
         base.Map(fun x -> x.recordIdentifier).Index(0) |> ignore
         base.Map(fun x -> x.reportType).Index(1) |> ignore
@@ -104,8 +104,10 @@ type DataRecordMap() =
         
 type ProcessingState =
     | NoCurrentReport
-    | Report of ReportKey
+    | Report of ReportHeader
     | Completed
+    
+type ReportData = Map<string, string>
 
 type Report = {
     Header: ReportHeader
@@ -138,7 +140,7 @@ let getRecord fieldValue (csv:CsvReader) =
     | 'C' when csv.Context.Row = 1 -> Comment (csv.GetRecord<Header>())
     | 'C' when csv.Context.Row > 1 -> EndOfReport (csv.GetRecord<Footer>()) 
     | 'I' -> Information (csv.GetRecord<ReportHeader>())
-    | 'D' -> Data (csv.GetRecord<ReportData>())
+    | 'D' -> Data (csv.GetRecord<DataRecord>())
     | recordIdentifier -> failwithf "Unknown record identifier: %c" recordIdentifier
 
 let updateState record state =
@@ -151,15 +153,21 @@ let updateState record state =
         failwith "Re-adding the report key"
     | Information i, _ ->
         { state with
-            ProcessingState = Report i.reportKey
+            ProcessingState = Report i
             Reports = state.Reports.Add(i.reportKey, { Header = i; Data = list.Empty }) }
     | Data _, { ProcessingState = NoCurrentReport} ->
         failwith "Processing data without a report"
-    | Data d, { ProcessingState = Report reportKey } when reportKey <> d.reportKey ->
+    | Data d, { ProcessingState = Report header } when header.reportKey <> d.reportKey ->
         failwith "Unexpected report type"
-    | Data d, { ProcessingState = Report _ } ->
-        let report = state.Reports.[d.reportKey]
-        let reports = state.Reports.Add(d.reportKey, { report with Data = report.Data @ [d] })
+    | Data { fields = v }, { ProcessingState = Report header } when header.fields.Length <> v.Length ->
+        failwith "Expecting same length of fields"
+    | Data d, { ProcessingState = Report header } ->
+        let kv =
+            List.zip header.fields d.fields
+            |> Map.ofList
+        let rk = d.reportKey
+        let report = state.Reports.[rk]
+        let reports = state.Reports.Add(rk, { report with Data = report.Data @ [kv] })
         { state with Reports = reports }
     | EndOfReport _, _  ->
         { state with ProcessingState = Completed }

@@ -17,8 +17,8 @@
     <Compile Include="FSharp\NMI.fsi" />
     <Compile Include="FSharp\NMI.fs" />
     <Compile Include="FSharp\NEM12.fs" />
-    <Compile Include="FSharp\TypeProvider.fs" />
     <Compile Include="FSharp\CSV.fs" />
+    <Compile Include="FSharp\TypeProvider.fs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NMI.fs" />
